@@ -7,9 +7,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/exercises', function () {
-    return view('exercises');
-})->name('exercises');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -22,7 +19,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-Route::get('/signup', function () {
-    return view('signup');
-})->name('signup');
