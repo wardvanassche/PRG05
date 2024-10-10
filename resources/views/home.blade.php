@@ -31,12 +31,30 @@
                 </form>
             </div>
             <div class="col d-flex justify-content-end">
-                <a href="{{ route('login') }}" class="btn btn-outline-dark" role="button">Login</a>
-                <a href="{{ route('signup') }}" class="btn btn-outline-dark" role="button">Sign up</a>
+                @if (Route::has('login'))
+                    @auth
+                    <a href="{{ url('dashboard') }}">Dashboard</a>
+                    @else
+                    <a href="{{ route('login') }}" class="btn btn-outline-dark me-2" role="button">Login</a>
+                    @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-outline-dark me-2" role="button">Signup</a>
+                   @endif
+                @endauth
+                @endif
             </div>
         </div>
     </div>
 </nav>
+<div class="card fixed-bottom">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
