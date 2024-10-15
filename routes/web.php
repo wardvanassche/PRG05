@@ -5,11 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-}) -> name('home');
+})->name('home');
 
-Route::get('/exercises', function () {
-    return view('exercises');
-}) -> name('exercises');
+Route::get('/exercises', [\App\Http\Controllers\ExerciseController::class, 'index'])->name('exercises');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -21,4 +19,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
