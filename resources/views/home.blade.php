@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-</head>
-<body>
-@include('layouts.header')
-<main>
+<x-app-layout>
     <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
         <div class="absolute inset-0 -z-10 overflow-hidden">
             <svg
@@ -106,8 +93,4 @@
             </div>
         </div>
     </div>
-
-</main>
-@include('layouts.footer')
-</body>
-</html>
+</x-app-layout>

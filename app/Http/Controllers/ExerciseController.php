@@ -2,21 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exercise;
+
 class ExerciseController extends Controller
 {
     public function index()
     {
-        $exercises = [
-            [
-                "name" => "chest press",
-                "category" => "chest",
-            ],
-            [
-                "name" => "lat pull down",
-                "category" => "back",
-            ]
-        ];
-
+        $exercises = Exercise::all();
 
         return view('exercises', compact('exercises'));
     }
