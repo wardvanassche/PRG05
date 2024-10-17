@@ -24,3 +24,6 @@ Dinsdag 15 oktober
 - Model aangemaakt
 - Data uit database in view weergegeven via controller
 
+Donderdag 17 oktober
+- Create pagina met form aangemaakt
+- Categories table aangemaakt
