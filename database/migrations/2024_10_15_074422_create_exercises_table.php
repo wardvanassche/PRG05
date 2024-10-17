@@ -12,8 +12,9 @@ return new class extends Migration {
     {
         Schema::create('exercises', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->string('name');
-            $table->string('category');
+            $table->foreignId('category_id')->constrained();
             $table->string('description');
             $table->integer('user_id');
         });

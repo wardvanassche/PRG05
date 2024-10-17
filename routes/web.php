@@ -7,8 +7,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/exercises', [\App\Http\Controllers\ExerciseController::class, 'index'])->name('exercises');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -20,3 +18,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
