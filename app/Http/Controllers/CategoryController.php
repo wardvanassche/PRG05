@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Exercise;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ExerciseController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $exercises = Exercise::all();
-        return view('exercises.index', compact('exercises'));
+        $categories = Category::all();
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ExerciseController extends Controller
      */
     public function create()
     {
-        return view('exercises.create');
+        return view('categories.create');
     }
 
     /**
@@ -30,20 +30,17 @@ class ExerciseController extends Controller
     public function store(Request $request)
     {
         $request->validate(['name' => 'required']);
-        $exercise = new Exercise();
-        $exercise->name = $request->input('name');
-        $exercise->description = $request->input('description');
-        $exercise->category_id = 1;
-        $exercise->user_id = 1;
-        $exercise->save();
+        $category = new Category();
+        $category->name = $request->input('name');
+        $category->save();
 
-        return redirect()->route('exercises.create');
+        return redirect()->route('categories.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Exercise $exercise)
+    public function show(Category $category)
     {
         //
     }
@@ -51,7 +48,7 @@ class ExerciseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Exercise $exercise)
+    public function edit(Category $category)
     {
         //
     }
@@ -59,7 +56,7 @@ class ExerciseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Exercise $exercise)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -67,7 +64,7 @@ class ExerciseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Exercise $exercise)
+    public function destroy(Category $category)
     {
         //
     }
