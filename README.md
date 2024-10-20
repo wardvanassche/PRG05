@@ -30,3 +30,4 @@ Donderdag 17 oktober
 
 Zondag 20 oktober
 - Categories index en create aangemaakt
+- Front-end veranderingen
