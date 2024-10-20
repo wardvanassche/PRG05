@@ -27,3 +27,7 @@ Dinsdag 15 oktober
 Donderdag 17 oktober
 - Create pagina met form aangemaakt
 - Categories table aangemaakt
+
+Zondag 20 oktober
+- Categories index en create aangemaakt
+- Front-end veranderingen
