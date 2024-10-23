@@ -1,4 +1,4 @@
-<x-app-layout title="categories">
+<x-app-layout title="Categories">
     <div class="w-3/4 m-auto my-10">
         <table class="w-full text-sm text-left">
             <thead class="text-xs uppercase bg-gray-600">

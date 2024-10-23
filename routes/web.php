@@ -21,4 +21,4 @@ require __DIR__ . '/auth.php';
 
 Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
 
-Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'verified']);
