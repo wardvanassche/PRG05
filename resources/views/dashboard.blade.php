@@ -8,12 +8,9 @@
     <title>Dashboard</title>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-
-</body>
-</html>
-
 @include('layouts.navigation')
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -23,4 +20,9 @@
             </div>
         </div>
     </div>
+    <div class="flex justify-center pt-10">
+        @include('components.dashboard-cards')
+    </div>
 </div>
+</body>
+</html>
