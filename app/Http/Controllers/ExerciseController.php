@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exercise;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
@@ -12,8 +13,7 @@ class ExerciseController extends Controller
      */
     public function index()
     {
-        $exercises = Exercise::all();
-        return view('exercises.index', compact('exercises'));
+        return view('exercises.index', ['exercises' => Exercise::all()], ['categories' => Category::all()]);
     }
 
     /**
