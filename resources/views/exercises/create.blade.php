@@ -10,10 +10,13 @@
                 id="description" name="description" type="text" placeholder="...">
             <select
                 class="bg-gray-200 text-gray-700 border rounded py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white"
-                id="category" name="category_id">
-                <option>Chest</option>
-                <option>Back</option>
-                <option>Shoulders</option>
+                id="category_id" name="category_id">
+                <option value="">Select a Category</option>
+
+                <!-- Loop through categories and display options -->
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
             </select>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-3 px-4 pr-8">
                 Create
@@ -21,3 +24,4 @@
         </form>
     </div>
 </x-app-layout>
+

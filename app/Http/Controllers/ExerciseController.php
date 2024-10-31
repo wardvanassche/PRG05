@@ -21,7 +21,9 @@ class ExerciseController extends Controller
      */
     public function create()
     {
-        return view('exercises.create');
+        $exercises = Exercise::all();
+        $categories = Category::all();
+        return view('exercises.create', compact('exercises', 'categories'));
     }
 
     /**
@@ -33,11 +35,11 @@ class ExerciseController extends Controller
         $exercise = new Exercise();
         $exercise->name = $request->input('name');
         $exercise->description = $request->input('description');
-        $exercise->category_id = 1;
+        $exercise->category_id = $request->input('category_id');
         $exercise->user_id = 1;
         $exercise->save();
 
-        return redirect()->route('exercises.create');
+        return redirect()->route('exercises.index');
     }
 
     /**
@@ -45,7 +47,7 @@ class ExerciseController extends Controller
      */
     public function show(Exercise $exercise)
     {
-        //
+        return view('exercises.show', ['exercise' => $exercise]);
     }
 
     /**
