@@ -14,8 +14,7 @@
                     <label for="description" class="block text-gray-700 font-medium mb-2">Description</label>
                     <input
                         class="bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                        id="description" name="description" type="text" placeholder="Enter a brief description"
-                        required>
+                        id="description" name="description" type="text" placeholder="Enter a brief description">
                 </div>
                 <div class="mb-4">
                     <label for="category_id" class="block text-gray-700 font-medium mb-2">Select a Category</label>
@@ -27,6 +26,12 @@
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block text-gray-700 font-medium mb-2">Image</label>
+                    <input
+                        class="bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                        id="image" name="image" type="url" placeholder="Add image url">
                 </div>
                 <button type="submit"
                         class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 rounded focus:outline-none focus:shadow-outline">

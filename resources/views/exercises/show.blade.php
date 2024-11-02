@@ -12,7 +12,7 @@
     <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-10">
 
         <!-- Exercise Image -->
-        <img class="w-full h-48 object-cover" src="{{ $exercise->image_url }}"
+        <img class="w-full h-48 object-cover" src=" {{ $exercise->image }}"
              alt="Picture of {{ $exercise->name }}">
 
         <!-- Exercise Title -->

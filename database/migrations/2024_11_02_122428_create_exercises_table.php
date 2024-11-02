@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('name');
             $table->foreignId('category_id')->constrained();
             $table->string('description');
+            $table->string('image');
             $table->integer('user_id');
         });
     }

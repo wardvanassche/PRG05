@@ -36,6 +36,7 @@ class ExerciseController extends Controller
         $exercise->name = $request->input('name');
         $exercise->description = $request->input('description');
         $exercise->category_id = $request->input('category_id');
+        $exercise->image = $request->input('image');
         $exercise->user_id = 1;
         $exercise->save();
 
