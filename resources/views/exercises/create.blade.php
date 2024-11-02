@@ -1,27 +1,39 @@
-<x-app-layout title="Create Exercise">
-    <div class="w-3/4 m-auto justify-center my-10">
-        <form class="" action="{{ route('exercises.index') }}" method="POST">
-            @csrf
-            <input
-                class="bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="name" name="name" type="text" placeholder="Bench Press">
-            <input
-                class="bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="description" name="description" type="text" placeholder="...">
-            <select
-                class="bg-gray-200 text-gray-700 border rounded py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white"
-                id="category_id" name="category_id">
-                <option value="">Select a Category</option>
+@auth
+    <x-app-layout title="Create Exercise">
+        <div class="max-w-md mx-auto my-10 p-5 bg-white rounded shadow-lg">
+            <h1 class="text-2xl font-semibold mb-6 text-center">Create a New Exercise</h1>
+            <form action="{{ route('exercises.index') }}" method="POST">
+                @csrf
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-medium mb-2">Exercise Name</label>
+                    <input
+                        class="bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                        id="name" name="name" type="text" placeholder="e.g., Bench Press" required>
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block text-gray-700 font-medium mb-2">Description</label>
+                    <input
+                        class="bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                        id="description" name="description" type="text" placeholder="Enter a brief description"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="category_id" class="block text-gray-700 font-medium mb-2">Select a Category</label>
+                    <select
+                        class="bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+                        id="category_id" name="category_id" required>
+                        <option value="">Select a Category</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <button type="submit"
+                        class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 rounded focus:outline-none focus:shadow-outline">
+                    Create Exercise
+                </button>
+            </form>
+        </div>
+    </x-app-layout>
 
-                <!-- Loop through categories and display options -->
-                @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
-            </select>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-3 px-4 pr-8">
-                Create
-            </button>
-        </form>
-    </div>
-</x-app-layout>
-
+@endauth
