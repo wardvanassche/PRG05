@@ -21,6 +21,11 @@ class ExerciseController extends Controller
      */
     public function create()
     {
+        if (\Auth::guest()) {
+            return redirect('login');
+        }
+
+
         $exercises = Exercise::all();
         $categories = Category::all();
         return view('exercises.create', compact('exercises', 'categories'));
