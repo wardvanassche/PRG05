@@ -9,6 +9,9 @@
                     <input
                         class="w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                         id="name" name="name" type="text" placeholder="e.g., Bench Press" required>
+                    @error('name')
+                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="description" class="block text-gray-700 font-medium mb-2">Description</label>
@@ -16,6 +19,9 @@
                         class="w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                         id="description" name="description" rows="4" placeholder="Enter a brief description"
                         required></textarea>
+                    @error('description')
+                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="category_id" class="block text-gray-700 font-medium mb-2">Select a Category</label>
@@ -27,12 +33,18 @@
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
+                    @error('category_id')
+                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="image" class="block text-gray-700 font-medium mb-2">Image</label>
                     <input
                         class="w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                        id="image" name="image" type="url" placeholder="Add image url">
+                        id="image" name="image" type="url" placeholder="Add image url" required>
+                    @error('image')
+                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    @enderror
                 </div>
                 <button type="submit"
                         class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 rounded focus:outline-none focus:shadow-outline">

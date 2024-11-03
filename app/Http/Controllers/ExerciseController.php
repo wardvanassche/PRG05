@@ -31,7 +31,13 @@ class ExerciseController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['name' => 'required']);
+        $request->validate([
+            'name' => ['required'],
+            'description' => ['required', 'min:10'],
+            'category_id' => ['required'],
+            'image' => ['required'],
+        ]);
+
         $exercise = new Exercise();
         $exercise->name = $request->input('name');
         $exercise->description = $request->input('description');
