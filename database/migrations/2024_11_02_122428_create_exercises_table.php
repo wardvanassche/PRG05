@@ -12,12 +12,12 @@ return new class extends Migration {
     {
         Schema::create('exercises', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\User::class);
             $table->timestamps();
             $table->string('name');
             $table->foreignId('category_id')->constrained();
             $table->string('description');
             $table->string('image');
-            $table->integer('user_id');
         });
     }
 

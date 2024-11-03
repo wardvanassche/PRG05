@@ -25,7 +25,6 @@ class ExerciseController extends Controller
             return redirect('login');
         }
 
-
         $exercises = Exercise::all();
         $categories = Category::all();
         return view('exercises.create', compact('exercises', 'categories'));
@@ -44,11 +43,11 @@ class ExerciseController extends Controller
         ]);
 
         $exercise = new Exercise();
+        $exercise->user_id = \Auth::user()->id;
         $exercise->name = $request->input('name');
         $exercise->description = $request->input('description');
         $exercise->category_id = $request->input('category_id');
         $exercise->image = $request->input('image');
-        $exercise->user_id = 1;
         $exercise->save();
 
         return redirect()->route('exercises.index');
