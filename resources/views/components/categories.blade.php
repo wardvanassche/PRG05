@@ -7,8 +7,7 @@
             {{ $category->name }}
         </td>
         <td class="px-6 py-4">
-            <a href=""
-               class="font-medium text-blue-400 hover:underline">Delete</a>
+            Delete
         </td>
     </tr>
 @endforeach

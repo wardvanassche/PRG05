@@ -12,15 +12,15 @@
 </head>
 <body>
 @include('layouts.navigation')
+
 <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white border-gray-200 dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900 dark:text-gray-100">
-                {{ __("You're logged in!") }}
-            </div>
-        </div>
+    <!-- User Greeting Header -->
+    <div class="bg-gray-900 shadow-sm sm:rounded-lg text-3xl text-white text-center py-6 w-3/4 m-auto mb-8">
+        <h1 class="font-semibold">Welcome, {{ Auth::user()->name }}</h1>
     </div>
-    <div class="flex justify-center pt-10">
+
+    <!-- Dashboard Cards -->
+    <div class="flex justify-center text-center">
         @include('components.dashboard-cards')
     </div>
 </div>

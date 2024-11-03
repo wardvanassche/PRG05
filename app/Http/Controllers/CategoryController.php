@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use function Pest\Laravel\delete;
 
 class CategoryController extends Controller
 {
@@ -66,6 +67,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category > delete();
+        return redirect('/categories');
     }
 }
