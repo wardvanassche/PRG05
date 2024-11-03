@@ -19,7 +19,7 @@
     </a>
 </div>
 <div class="mx-5 w-1/6">
-    <a href="">
+    <a href="{{ route('users.index') }}">
         <div class="w-full max-w-sm rounded-lg shadow bg-gray-800 hover:bg-gray-700">
             <div class="flex flex-col items-center p-8">
                 <i class="fa-solid fa-user text-white"></i>
