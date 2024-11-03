@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-@include('layouts.navigation')
+@include('layouts.admin-navigation')
 <div class="flex items-center justify-center my-10">
     <div class="bg-white shadow-md rounded-lg p-8 w-96">
         <h1 class="text-2xl font-semibold mb-6 text-center">Create a New Category</h1>

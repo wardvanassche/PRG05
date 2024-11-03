@@ -1,5 +1,5 @@
 @props(['title'])
-        <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -12,9 +12,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 @include('layouts.header')
-{{ $slot }}
+<main class="flex-grow">
+    {{ $slot }}
+</main>
 @include('layouts.footer')
 </body>
 </html>

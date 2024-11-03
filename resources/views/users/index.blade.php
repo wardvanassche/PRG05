@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-@include('layouts.navigation')
+@include('layouts.admin-navigation')
 <div class="py-12">
 
     <!-- User Greeting Header -->

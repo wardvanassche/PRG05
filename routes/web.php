@@ -11,6 +11,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -21,6 +22,8 @@ require __DIR__ . '/auth.php';
 
 Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
 
-Route::resource('users', \App\Http\Controllers\UserController::class)->middleware(['auth', 'verified']);
-Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'verified']);
-Route::resource('posts', \App\Http\Controllers\UserController::class)->middleware(['auth', 'verified']);
+Route::resource('users', \App\Http\Controllers\UserController::class)->middleware('admin');
+
+Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware('admin');
+
+Route::resource('posts', \App\Http\Controllers\UserController::class)->middleware('auth');
