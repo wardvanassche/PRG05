@@ -25,8 +25,9 @@
                 <div class="lg:pr-4">
                     <div class="lg:max-w-lg">
                         <p class="text-base font-semibold leading-7 text-indigo-600">Grow faster</p>
-                        <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Build your
-                            workout</h1>
+                        <h1 class="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+                            Discover.
+                            Share. Achieve.</h1>
                         <p class="mt-6 text-xl leading-8 text-gray-700">Aliquet nec orci mattis amet quisque ullamcorper
                             neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae
                             feugiat egestas.</p>
