@@ -16,7 +16,7 @@
         <h1 class="font-semibold">Categories</h1>
     </div>
 
-    <div class="max-w-2xl mx-auto my-10 p-6 rounded-lg shadow-lg">
+    <div class="mx-auto my-10 p-6 rounded-lg shadow-lg w-1/3">
         <!-- Create Category Button -->
         <div class="mb-4 text-center">
             <a href="{{ route('categories.create') }}"
@@ -25,7 +25,7 @@
             </a>
         </div>
 
-        <table class="w-full text-sm text-left bg-gray-800 rounded-lg overflow-hidden">
+        <table class="text-sm text-left bg-gray-800 rounded-lg overflow-hidden w-full">
             <thead class="text-xs uppercase bg-gray-600">
             <tr>
                 <th scope="col" class="px-6 py-3 text-gray-200">ID</th>

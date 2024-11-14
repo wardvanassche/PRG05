@@ -17,7 +17,7 @@
         <h1 class="font-semibold">Users</h1>
     </div>
 
-    <div class="w-1/2 m-auto my-10 p-6 rounded-lg shadow-lg">
+    <div class="w-85 m-auto my-10 p-6 rounded-lg shadow-lg">
         <table class="w-full text-sm text-left bg-gray-800 rounded-lg overflow-hidden">
             <thead class="text-xs uppercase bg-gray-600">
             <tr>

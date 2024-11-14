@@ -10,7 +10,7 @@
                         class="w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                         id="name" name="name" type="text" placeholder="e.g., Bench Press" required>
                     @error('name')
-                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    <p class="text-xs text-red-500 font-semibold italic"> {{ $message }} </p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -20,7 +20,7 @@
                         id="description" name="description" rows="4" placeholder="Enter a brief description"
                         required></textarea>
                     @error('description')
-                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    <p class="text-xs text-red-500 font-semibold italic"> {{ $message }} </p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -34,7 +34,7 @@
                         @endforeach
                     </select>
                     @error('category_id')
-                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    <p class="text-xs text-red-500 font-semibold italic"> {{ $message }} </p>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -43,7 +43,7 @@
                         class="w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
                         id="image" name="image" type="url" placeholder="Add image url" required>
                     @error('image')
-                    <p class="text-xs text-red-500 font-semibold"> {{ $message }} </p>
+                    <p class="text-xs text-red-500 font-semibold italic"> {{ $message }} </p>
                     @enderror
                 </div>
                 <button type="submit"

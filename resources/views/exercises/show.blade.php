@@ -9,7 +9,7 @@
     </div>
 
     <!-- Container -->
-    <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-10">
+    <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg m-10">
 
         <!-- Exercise Image -->
         <img class="w-full h-auto object-cover rounded-lg" src="{{ $exercise->image }}"

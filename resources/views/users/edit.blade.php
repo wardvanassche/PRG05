@@ -23,14 +23,14 @@
                 <label for="name" class="block text-white mb-2">Name</label>
                 <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}"
                        class="block w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                       required>
+                       required readonly>
             </div>
 
             <div class="mb-4">
                 <label for="email" class="block text-white mb-2">Email</label>
                 <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}"
                        class="block w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                       required>
+                       required readonly>
             </div>
 
             <div class="mb-4">
