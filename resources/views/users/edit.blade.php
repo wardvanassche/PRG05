@@ -11,7 +11,7 @@
 </head>
 <body>
 @include('layouts.admin-navigation')
-<div class="max-w-7xl mx-auto px-4 my-10">
+<div class="max-w-7xl mx-auto px-4 my-10    ">
     <h2 class="text-2xl font-bold mb-6">Edit User: {{ $user->name }}</h2>
 
     <div class="bg-gray-800 p-6 rounded-lg shadow-md">

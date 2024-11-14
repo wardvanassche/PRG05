@@ -7,7 +7,17 @@
             {{ $category->name }}
         </td>
         <td class="px-6 py-4">
-            Delete
+            <a href="{{ route('categories.destroy', $category->id) }}"
+               class="font-medium text-blue-400 hover:underline"
+               onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this category?')) { document.getElementById('delete-form-{{ $category->id }}').submit(); }">
+                Delete
+            </a>
+            <form id="delete-form-{{ $category->id }}" action="{{ route('categories.destroy', $category->id) }}"
+                  method="POST"
+                  style="display: none;">
+                @csrf
+                @method('DELETE')
+            </form>
         </td>
     </tr>
 @endforeach
