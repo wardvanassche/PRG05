@@ -18,13 +18,19 @@
 <div class="py-12 flex flex-col m-auto">
     <!-- User Greeting Header -->
     <div class="bg-gray-900 shadow-sm sm:rounded-lg text-3xl text-white text-center py-6 w-3/4 m-auto mb-8">
-        <h1 class="font-semibold">Exercises</h1>
+        <h1 class="font-semibold">
+            @if(Auth::user()->is_admin)
+                Posts
+            @else
+                Your posts
+            @endif
+        </h1>
     </div>
 </div>
 
 <!-- Posts -->
-//posts by user are displayed only
-//except for admin all posts are displayed with admin functions
-
+@foreach($exercises as $exercise)
+    @include('components.posts-cards')
+@endforeach
 </body>
 </html>

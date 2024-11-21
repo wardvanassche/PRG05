@@ -26,6 +26,4 @@ Route::resource('users', \App\Http\Controllers\UserController::class)->middlewar
 
 Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'admin']);
 
-Route::get('/posts', function () {
-    return view('posts');
-})->middleware('auth')->name('posts');
+Route::resource('posts', \App\Http\Controllers\PostController::class)->middleware('auth');
