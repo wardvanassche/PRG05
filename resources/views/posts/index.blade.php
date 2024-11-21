@@ -26,11 +26,8 @@
             @endif
         </h1>
     </div>
-</div>
-
-<!-- Posts -->
-@foreach($exercises as $exercise)
+    <!-- Posts -->
     @include('components.posts-cards')
-@endforeach
+</div>
 </body>
 </html>

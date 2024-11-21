@@ -18,12 +18,30 @@
                         {{ $exercise->category->name }}
                     </span>
 
-                    <!-- Details Button -->
-                    <div class="mt-4">
+                    <!-- Buttons -->
+                    <div class="mt-4 flex space-x-2">
+                        <!-- Details Button -->
                         <a href="{{ route('posts.show', $exercise->id) }}"
                            class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 py-2 rounded-md">
                             Details
                         </a>
+
+                        <!-- Update Button -->
+                        <a href="{{ route('posts.edit', $exercise->id) }}"
+                           class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-3 py-2 rounded-md">
+                            Update
+                        </a>
+
+                        <!-- Delete Button -->
+                        <form action="{{ route('exercises.destroy', $exercise->id) }}" method="POST"
+                              onsubmit="return confirm('Are you sure you want to delete this exercise?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                    class="inline-block bg-red-500 hover:bg-red-600 text-white font-semibold px-3 py-2 rounded-md">
+                                Delete
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
