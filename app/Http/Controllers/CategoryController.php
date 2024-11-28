@@ -37,31 +37,7 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Category $category)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Category $category)
-    {
-        //
-    }
-
+  
     /**
      * Remove the specified resource from storage.
      */

@@ -37,7 +37,7 @@ class ExerciseController extends Controller
     {
         $request->validate([
             'name' => ['required'],
-            'description' => ['required', 'min:10'],
+            'description' => ['required', 'min:100', 'max:250'],
             'category_id' => ['required'],
             'image' => ['required'],
         ]);

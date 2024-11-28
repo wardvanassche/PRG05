@@ -3,13 +3,17 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth')->name('dashboard');
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+
+Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
+
+Route::resource('users', \App\Http\Controllers\UserController::class)->middleware(['auth', 'admin']);
+
+Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'admin']);
+
+Route::resource('posts', \App\Http\Controllers\PostController::class)->middleware('auth');
 
 
 Route::middleware('auth')->group(function () {
@@ -19,11 +23,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
-
-Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
-
-Route::resource('users', \App\Http\Controllers\UserController::class)->middleware(['auth', 'admin']);
-
-Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'admin']);
-
-Route::resource('posts', \App\Http\Controllers\PostController::class)->middleware('auth');
