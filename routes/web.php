@@ -7,14 +7,13 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
+Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->middleware('auth')->name('posts');
+
 Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
 
 Route::resource('users', \App\Http\Controllers\UserController::class)->middleware(['auth', 'admin']);
 
 Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'admin']);
-
-Route::resource('posts', \App\Http\Controllers\PostController::class)->middleware('auth');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

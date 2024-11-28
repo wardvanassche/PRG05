@@ -66,7 +66,7 @@ class ExerciseController extends Controller
      */
     public function edit(Exercise $exercise)
     {
-        //
+        return view('exercises.edit', ['exercise' => $exercise, 'categories' => Category::all()]);
     }
 
     /**

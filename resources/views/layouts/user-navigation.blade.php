@@ -10,7 +10,7 @@
                     <x-nav-link :href="route('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('posts.index')">
+                    <x-nav-link :href="route('posts')">
                         {{ __('Your posts') }}
                     </x-nav-link>
                 </div>
