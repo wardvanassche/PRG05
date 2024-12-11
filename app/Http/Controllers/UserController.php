@@ -18,7 +18,6 @@ class UserController extends Controller
 
     public function changeRole(User $user)
     {
-        // Toggle the is_admin status based on the checkbox value
         $user->is_admin = !$user->is_admin;
         $user->save();
 

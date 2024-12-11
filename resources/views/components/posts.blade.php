@@ -12,10 +12,10 @@
         <td class="px-6 py-4 text-white">
             {{ $exercise->category->name }}
         </td>
-        <td class="px-6 py-4 text-white">
+        <td class="px-6 py-4 text-white max-w-xs truncate">
             {{ $exercise->description }}
         </td>
-        <td class="px-6 py-4 text-white">
+        <td class="px-6 py-4 text-white max-w-xs truncate">
             {{ $exercise->image }}
         </td>
         <td class="px-6 py-4 text-white">

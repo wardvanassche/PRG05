@@ -13,7 +13,7 @@ Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->mi
 Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
 
 Route::resource('users', \App\Http\Controllers\UserController::class)->middleware(['auth', 'admin']);
-Route::put('/users/{user}/change-role', [UserController::class, 'changeRole'])->name('users.change_role');
+Route::put('/users/{user}/change-role', [UserController::class, 'changeRole'])->name('users.change_role')->middleware('auth', 'admin');
 
 Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'admin']);
 
