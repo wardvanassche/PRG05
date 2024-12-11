@@ -1,7 +1,13 @@
 <header>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 flex items-center">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 flex items-center py-8">
         <!-- Left Navigation (Home, Exercises, etc.) -->
-        <div class="flex-1 hidden md:block px-5" id="navbar-default">
+        <div class="flex-1 flex items-center px-5" id="navbar-default">
+            <!-- Logo on the Left -->
+            <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse mr-8">
+                <img src="{{ Vite::asset('resources/images/logo1.png') }}" alt="Logo" class="h-10"/>
+            </a>
+
+            <!-- Navigation Links -->
             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                     <a href="{{ route('home') }}"
@@ -21,13 +27,6 @@
                     @endif
                 @endauth
             </ul>
-        </div>
-
-        <!-- Centered Logo -->
-        <div class="flex-1 flex items-center justify-center p-4">
-            <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Logo"/>
-            </a>
         </div>
 
         <!-- Right Login/Register or Dashboard Links -->

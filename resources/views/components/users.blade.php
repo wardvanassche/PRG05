@@ -4,11 +4,20 @@
             {{ $user->id }}
         </th>
         <td class="px-6 py-4 text-white">
-            @if($user->is_admin)
-                Admin
-            @else
-                User
-            @endif
+
+            <form action="{{ route('users.change_role', $user->id) }}" method="POST" id="role-form-{{ $user->id }}">
+                @csrf
+                @method('PUT')
+
+                <label class="inline-flex items-center cursor-pointer">
+                    <input type="checkbox" name="is_admin" id="is_admin_{{ $user->id }}"
+                           {{ $user->is_admin ? 'checked' : '' }}
+                           class="sr-only peer" onchange="this.form.submit()">
+                    <div
+                        class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                </label>
+            </form>
+
         </td>
         <td class="px-6 py-4 text-white">
             {{ $user->name }}
@@ -18,14 +27,6 @@
         </td>
         <td class="px-6 py-4 text-white">
             {{ $user->created_at }}
-        </td>
-        <td class="px-6 py-4 text-white">
-            {{ $user->updated_at }}
-        </td>
-        <td class="px-6 py-4 text-white">
-            <a href="{{ route('users.edit', $user->id) }}" class="font-bold text-blue-400 hover:underline">
-                Edit
-            </a>
         </td>
         <td class="px-6 py-4">
             <a href="{{ route('users.destroy', $user->id) }}"

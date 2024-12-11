@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -12,6 +13,7 @@ Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->mi
 Route::resource('exercises', \App\Http\Controllers\ExerciseController::class);
 
 Route::resource('users', \App\Http\Controllers\UserController::class)->middleware(['auth', 'admin']);
+Route::put('/users/{user}/change-role', [UserController::class, 'changeRole'])->name('users.change_role');
 
 Route::resource('categories', \App\Http\Controllers\CategoryController::class)->middleware(['auth', 'admin']);
 

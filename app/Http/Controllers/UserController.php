@@ -16,32 +16,13 @@ class UserController extends Controller
         return view('users.index', ['users' => User::all()]);
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
+    public function changeRole(User $user)
     {
-        $user = User::find($id);
-        return view('users.edit', ['user' => $user]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id)
-    {
-        // store
-        $user = User::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-
-        // Update the user's admin status
-        $user->is_admin = $request->has('is_admin'); // Will be true if checked
-
+        // Toggle the is_admin status based on the checkbox value
+        $user->is_admin = !$user->is_admin;
         $user->save();
-        // redirect
-        return redirect('/users');
+
+        return redirect()->route('users.index');
     }
 
     /**

@@ -22,12 +22,10 @@
             <thead class="text-xs uppercase bg-gray-600">
             <tr>
                 <th scope="col" class="px-6 py-3 text-gray-200">ID</th>
-                <th scope="col" class="px-6 py-3 text-gray-200">Role</th>
+                <th scope="col" class="px-6 py-3 text-gray-200">Admin</th>
                 <th scope="col" class="px-6 py-3 text-gray-200">Name</th>
                 <th scope="col" class="px-6 py-3 text-gray-200">Email</th>
                 <th scope="col" class="px-6 py-3 text-gray-200">Created at</th>
-                <th scope="col" class="px-6 py-3 text-gray-200">Updated at</th>
-                <th scope="col" class="px-6 py-3 text-gray-200"></th>
                 <th scope="col" class="px-6 py-3 text-gray-200"></th>
             </tr>
             </thead>
