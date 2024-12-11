@@ -72,9 +72,25 @@ class ExerciseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Exercise $exercise)
+    public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id', // Validate that the category exists in the categories table
+            'image' => 'nullable|url', // Assuming the image is a URL, validate it if provided
+        ]);
+
+        $exercise = Exercise::findOrFail($id);
+
+        $exercise->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'category_id' => $request->input('category_id'),  // Update the category_id field
+            'image' => $request->input('image', $exercise->image), // Keep the existing image if no new one is provided
+        ]);
+
+        return redirect()->route('posts');
     }
 
     /**

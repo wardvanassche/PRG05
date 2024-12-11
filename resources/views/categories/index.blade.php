@@ -25,7 +25,8 @@
             </a>
         </div>
 
-        <table class="text-sm text-left bg-gray-800 rounded-lg overflow-hidden w-full">
+        <!-- Table with rounded corners -->
+        <table class="text-sm text-left bg-gray-800 w-full rounded-lg overflow-hidden">
             <thead class="text-xs uppercase bg-gray-600">
             <tr>
                 <th scope="col" class="px-6 py-3 text-gray-200">ID</th>
