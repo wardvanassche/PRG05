@@ -13,9 +13,19 @@ class ExerciseController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('exercises.index', ['exercises' => Exercise::all()], ['categories' => Category::all()]);
+        $categories = Category::all();
+
+        $query = Exercise::query();
+
+        if (isset($request->title) && ($request->title != null)) {
+            $query->where('name', $request->title);
+        }
+
+        $exercises = $query->get();
+
+        return view('exercises.index', compact('exercises', 'categories'));
     }
 
     /**
