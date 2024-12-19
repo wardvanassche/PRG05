@@ -28,6 +28,19 @@
         <div class="flex justify-center text-center">
             @include('components.dashboard-cards')
         </div>
+    @else
+        <div class="flex justify-center text-center">
+            <div class="mx-5 w-1/6">
+                <a href="{{ route('posts') }}">
+                    <div class="w-full max-w-sm rounded-lg shadow bg-gray-800 hover:bg-gray-700">
+                        <div class="flex flex-col items-center p-8">
+                            <i class="fa-solid fa-dumbbell text-white"></i>
+                            <h5 class="text-xl font-medium text-gray-900 dark:text-white mt-3">Your posts</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     @endif
 </div>
 </body>

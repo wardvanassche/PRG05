@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Exercise;
 use App\Models\Category;
+use Carbon\Carbon;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
@@ -23,6 +25,15 @@ class ExerciseController extends Controller
     {
         if (\Auth::guest()) {
             return redirect('login');
+        }
+
+        $user = \Auth::user();
+        $registrationTime = $user->created_at;
+        $currentTime = Carbon::now();
+        $timeDifference = $currentTime->diffInMinutes($registrationTime);
+
+        if ($timeDifference > -5) {
+            abort(403, 'You need to be registered for at least 5 minutes to create exercises');
         }
 
         $exercises = Exercise::all();
@@ -66,6 +77,9 @@ class ExerciseController extends Controller
      */
     public function edit(Exercise $exercise)
     {
+        if ($exercise->user_id !== \Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('exercises.edit', ['exercise' => $exercise, 'categories' => Category::all()]);
     }
 
