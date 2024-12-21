@@ -6,12 +6,12 @@
             <div class="flex justify-center mb-6 space-x-4"> <!-- Added space between the dropdown and search bar -->
                 <!-- Dropdown Filter (Centered and Wider) -->
                 <div class="relative w-full max-w-md"> <!-- Set max-width to control the width -->
-                    <select id="category" name="category"
+                    <select id="category_id" name="category_id"
                             class="mt-1 block w-full px-6 py-3 text-lg border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option value="">All Categories</option>
                         @foreach($categories as $category)
                             <option
-                                value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                                value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
                                 {{ $category->name }}
                             </option>
                         @endforeach
@@ -37,7 +37,7 @@
 
         <!-- Exercises List -->
         <div class="flex flex-wrap my-10">
-            @include('components.exercises-cards', ['category' => request('category'), 'search' => request('search')])
+            @include('components.exercises-cards')
         </div>
     </div>
 </x-app-layout>

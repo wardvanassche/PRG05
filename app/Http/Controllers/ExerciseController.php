@@ -19,16 +19,20 @@ class ExerciseController extends Controller
 
         $query = Exercise::query();
 
-        // Use LIKE for partial match
+        // filter by title if provided
         if (isset($request->title) && ($request->title != null)) {
             $query->where('name', 'like', '%' . $request->title . '%');
         }
-
+        // Filter by category if selected
+        if (isset($request->category_id) && $request->category_id != null) {
+            $query->where('category_id', $request->category_id);
+        }
+        
         $exercises = $query->get();
 
         return view('exercises.index', compact('exercises', 'categories'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
