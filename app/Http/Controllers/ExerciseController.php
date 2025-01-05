@@ -92,10 +92,11 @@ class ExerciseController extends Controller
      */
     public function edit(Exercise $exercise)
     {
-        if ($exercise->user_id !== \Auth::id()) {
+        if ($exercise->user_id == \Auth::id() || \Auth::user()->is_admin) {
+            return view('exercises.edit', ['exercise' => $exercise, 'categories' => Category::all()]);
+        } else {
             abort(403, 'Unauthorized action.');
         }
-        return view('exercises.edit', ['exercise' => $exercise, 'categories' => Category::all()]);
     }
 
     /**

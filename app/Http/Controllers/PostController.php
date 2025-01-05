@@ -9,6 +9,10 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('posts', ['exercises' => Exercise::where('user_id', \Auth::user()->id)->get()]);
+        if (\Auth::user()->is_admin) {
+            return view('posts', ['exercises' => Exercise::all()]);
+        } else {
+            return view('posts', ['exercises' => Exercise::where('user_id', \Auth::user()->id)->get()]);
+        }
     }
 }

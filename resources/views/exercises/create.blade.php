@@ -41,7 +41,7 @@
                     <label for="image" class="block text-gray-700 font-medium mb-2">Image</label>
                     <input
                         class="w-full bg-gray-200 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                        id="image" name="image" type="url" required>
+                        id="image" name="image" type="url" placeholder="Add image URL" required>
                     @error('image')
                     <p class="text-xs text-red-500 font-semibold italic"> {{ $message }} </p>
                     @enderror
