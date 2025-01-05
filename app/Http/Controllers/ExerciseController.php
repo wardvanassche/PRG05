@@ -35,7 +35,7 @@ class ExerciseController extends Controller
         $noResults = $exercises->isEmpty();
 
         // Paginate the results (15 exercises per page)
-        $exercises = $query->paginate(15);
+        $exercises = $query->paginate(10);
 
         return view('exercises.index', compact('exercises', 'categories', 'noResults'));
     }

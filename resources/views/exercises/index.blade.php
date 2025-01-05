@@ -46,9 +46,5 @@
         <div class="flex flex-wrap my-10">
             @include('components.exercises-cards')
         </div>
-
-        {{-- Display pagination links --}}
-        {{ $exercises->links() }}
-
     </div>
 </x-app-layout>
