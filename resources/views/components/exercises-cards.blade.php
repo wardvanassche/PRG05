@@ -4,8 +4,8 @@
             <div class="w-full rounded-lg overflow-hidden shadow-lg bg-white">
                 <!-- Exercise Image -->
                 <img class="w-full h-48 object-cover"
-                     src="{{ $exercise->image }}"
-                     alt="Picture of {{ $exercise->name }}">
+§                     src="{{ $exercise->image }}">
+                alt="Picture of {{ $exercise->name }}">
 
                 <!-- Exercise Info -->
                 <div class="p-4">

@@ -27,7 +27,7 @@ class ExerciseController extends Controller
         if (isset($request->category_id) && $request->category_id != null) {
             $query->where('category_id', $request->category_id);
         }
-        
+
         $exercises = $query->get();
 
         return view('exercises.index', compact('exercises', 'categories'));

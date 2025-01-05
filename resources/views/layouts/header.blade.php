@@ -4,7 +4,7 @@
         <div class="flex-1 flex items-center px-5" id="navbar-default">
             <!-- Logo on the Left -->
             <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse mr-8">
-                <img src="{{ Vite::asset('resources/images/logo1.png') }}" alt="Logo" class="h-10"/>
+                <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Logo" class="h-10"/>
             </a>
 
             <!-- Navigation Links -->

@@ -3,7 +3,7 @@
         <div class="sm:flex sm:items-center sm:justify-between">
             <!-- Logo on the Left -->
             <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse mb-4 sm:mb-0">
-                <img src="{{ Vite::asset('resources/images/logo1.png') }}" alt="Logo" class="h-8"/>
+                <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Logo" class="h-8"/>
                 <!-- Increased size here -->
             </a>
 
