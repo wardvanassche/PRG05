@@ -35,9 +35,20 @@
             </div>
         </form>
 
-        <!-- Exercises List -->
+        {{-- Display message if no exercises found --}}
+        @if ($noResults)
+            <div class="flex d-flex justify-center">
+                <p>No exercises found based on your search criteria.</p>
+            </div>
+        @endif
+
+        {{-- Display exercises --}}
         <div class="flex flex-wrap my-10">
             @include('components.exercises-cards')
         </div>
+
+        {{-- Display pagination links --}}
+        {{ $exercises->links() }}
+
     </div>
 </x-app-layout>

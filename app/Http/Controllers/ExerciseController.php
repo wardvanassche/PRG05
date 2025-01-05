@@ -7,6 +7,7 @@ use App\Models\Category;
 use Carbon\Carbon;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
+use function Laravel\Prompts\error;
 
 class ExerciseController extends Controller
 {
@@ -29,10 +30,14 @@ class ExerciseController extends Controller
             $query->where('category_id', $request->category_id);
         }
 
+        $exercises = $query->get();
+
+        $noResults = $exercises->isEmpty();
+
         // Paginate the results (15 exercises per page)
         $exercises = $query->paginate(15);
 
-        return view('exercises.index', compact('exercises', 'categories'));
+        return view('exercises.index', compact('exercises', 'categories', 'noResults'));
     }
 
 
