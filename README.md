@@ -4,30 +4,27 @@
 
 **changelog**
 
-Dinsdag 8 oktober
-
+8 oktober
 - Laravel geinstalleerd
 
-donderdag 10 oktober
-
+10 oktober
 - Local en remote Git aangemaakt
 - Breeze geinstalleerd
 
-Maandag 14 oktober
-
+14 oktober
 - Layout gemaakt dmv components
 - Hardcoded data weergegeven in view via controller
 
-Dinsdag 15 oktober
-
+15 oktober
 - Database aangemaakt
 - Model aangemaakt
 - Data uit database in view weergegeven via controller
 
-Donderdag 17 oktober
+17 oktober
 - Create pagina met form aangemaakt
 - Categories table aangemaakt
 
-Zondag 20 oktober
+20 oktober
 - Categories index en create aangemaakt
 - Front-end veranderingen
+
