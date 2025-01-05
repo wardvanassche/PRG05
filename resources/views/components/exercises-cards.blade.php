@@ -1,4 +1,8 @@
 <div class="container mx-auto my-10 p-4">
+    <!-- Pagination Links -->
+    <div class="mb-6 flex justify-center">
+        {{ $exercises->links() }}
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         @foreach($exercises as $exercise)
             <div class="w-full rounded-lg overflow-hidden shadow-lg bg-white">

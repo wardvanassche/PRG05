@@ -23,15 +23,18 @@ class ExerciseController extends Controller
         if (isset($request->title) && ($request->title != null)) {
             $query->where('name', 'like', '%' . $request->title . '%');
         }
+
         // Filter by category if selected
         if (isset($request->category_id) && $request->category_id != null) {
             $query->where('category_id', $request->category_id);
         }
 
-        $exercises = $query->get();
+        // Paginate the results (15 exercises per page)
+        $exercises = $query->paginate(15);
 
         return view('exercises.index', compact('exercises', 'categories'));
     }
+
 
     /**
      * Show the form for creating a new resource.
