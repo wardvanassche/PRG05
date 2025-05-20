@@ -4,30 +4,77 @@
 
 **changelog**
 
-Dinsdag 8 oktober
+8 oktober
+- Installed Laravel
+- Initial commit
 
-- Laravel geinstalleerd
+10 oktober
+- Created local and remote Git
+- Added Breeze
 
-donderdag 10 oktober
+14 oktober
+- Added layout
+- Added dummy data
 
-- Local en remote Git aangemaakt
-- Breeze geinstalleerd
+15 oktober
+- Created database
+- Added models
+- Displayed data through controller
 
-Maandag 14 oktober
+17 oktober
+- Added create with form
+- Added categories table in database
 
-- Layout gemaakt dmv components
-- Hardcoded data weergegeven in view via controller
+20 oktober
+- Added categories create and index
+- Front-end changes
 
-Dinsdag 15 oktober
+23 oktober
+- Added exercise cards on index
+- Added dashboard front-end
 
-- Database aangemaakt
-- Model aangemaakt
-- Data uit database in view weergegeven via controller
+31 oktober
+- Created detail page for exercises
 
-Donderdag 17 oktober
-- Create pagina met form aangemaakt
-- Categories table aangemaakt
+2 november
+- Added middleware for exercise create
+- Images can be added to exercises
+- Changes to front-end for exercise create and detail pages
 
-Zondag 20 oktober
-- Categories index en create aangemaakt
-- Front-end veranderingen
+3 november
+- Added client- and server-side validation to exercise create form
+- User_id added to exercises table
+- Edit users and change their admin roles
+- Added authentication
+
+14 november
+- Added delete function
+- Changed logo
+
+18 november
+- Added posts view
+- Added authentication for posts
+
+21 november
+- Added update and delete for posts
+
+28 november
+- Added exercise edit view
+- Changed controller structure
+
+11 december
+- Changed posts table with added truncate
+- Changes to front-end and logo positioning
+
+19 december
+- Added deep validation
+- Added front-end for search & filter
+- Added back-end for search bar
+
+21 december
+- Added back-end for filter option
+
+5 januari
+- Added deeplink prevention
+- Added pagination to exercise index
+- Added search & filter message when request empty
