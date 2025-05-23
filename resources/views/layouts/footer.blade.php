@@ -1,4 +1,4 @@
-<footer class="bg-white shadow dark:bg-gray-900 m-4 flex items-center justify-between">
+<footer class="shadow bg-gray-900 m-4 flex items-center justify-between">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <!-- Logo on the Left -->
@@ -8,7 +8,7 @@
             </a>
 
             <!-- Footer Links -->
-            <ul class="flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400">
+            <ul class="flex flex-wrap items-center text-sm font-medium text-gray-400">
                 <li>
                     <a href="{{ route('home') }}" class="hover:underline me-4 md:me-6">Home</a>
                 </li>
@@ -34,10 +34,10 @@
             </ul>
         </div>
 
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
+        <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8"/>
 
         <!-- Copyright Information -->
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
+        <span class="block text-sm sm:text-center text-gray-400">© 2024 <a
                 href="{{ route('home') }}" class="hover:underline">ExerciseExplorer™</a>. All Rights Reserved.</span>
     </div>
 </footer>
